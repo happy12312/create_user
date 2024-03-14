@@ -13,7 +13,7 @@ if [ "$type_sudo" = "2" ]; then        echo -n "Enter commands for sudo: "
         read sudo_commelif [ "$type_sudo" = "3" ]; then
         echo -n "Enter commands or groups for sudo: "        read sudo_comm
 fi
-file=/home/dgolovkin/scripts/hosts
+file=/home/scripts/hosts
 
 for host in $(cat $file); do        gossh="sshpass -p $password ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 root@$host"
         ping -c 2 $host > /dev/null 2>&1        if [ $? -eq 0 ]; then
