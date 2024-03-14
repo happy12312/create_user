@@ -1,4 +1,5 @@
-#!/bin/bash#set -x
+#!/bin/bash
+#set -x
 echo -n "Enter name user: "read username
 echo -n "Enter comment: "
 read comment
@@ -28,4 +29,5 @@ for host in $(cat $file); do        gossh="sshpass -p $password ssh -o StrictHos
                                                 fi                                        done
                                         $gossh "echo '$username  ALL=(ALL)       ${res_comm%,*}' >> /etc/sudoers"                                fi
                         fi                fi
-        fidone
+        fi
+done
